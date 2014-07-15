@@ -19,9 +19,37 @@ ul, ol { list-style-type: none; }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) { * { -webkit-text-size-adjust: none; } }
 table { border-spacing: 0; border-collapse: collapse; width: 100%; }
 
-body { font-family: Arial, sans-serif; font-size: 12px; line-height: 1.4; }
+@font-face { font-family: roboto-regular; src: url("../fonts/roboto-regular.eot"); src: url("../fonts/roboto-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-regular.woff") format("woff"), url("../fonts/roboto-regular.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: roboto-medium; src: url("../fonts/roboto-medium.eot"); src: url("../fonts/roboto-medium.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-medium.woff") format("woff"), url("../fonts/roboto-medium.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: roboto-bold; src: url("../fonts/roboto-bold.eot"); src: url("../fonts/roboto-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-bold.woff") format("woff"), url("../fonts/roboto-bold.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: roboto-italic; src: url("../fonts/roboto-italic.eot"); src: url("../fonts/roboto-italic.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-italic.woff") format("woff"), url("../fonts/roboto-italic.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: robotocondensed-bold; src: url("../fonts/robotocondensed-bold.eot"); src: url("../fonts/robotocondensed-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/robotocondensed-bold.woff") format("woff"), url("../fonts/robotocondensed-bold.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: roboto-light; src: url("../fonts/roboto-light.eot"); src: url("../fonts/roboto-light.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-light.woff") format("woff"), url("../fonts/roboto-light.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: roboto-thin; src: url("../fonts/roboto-thin.eot"); src: url("../fonts/roboto-thin.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-thin.woff") format("woff"), url("../fonts/roboto-thin.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+html::-webkit-scrollbar { width: 6px; height: 6px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; background: #d1d1d1; }
+html::-webkit-scrollbar-thumb { background: #1594be; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
+html::-webkit-scrollbar-track-piece { -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
+html ::selection { background: rgba(0, 0, 0, 0.1); }
+html ::-moz-selection { background: rgba(0, 0, 0, 0.1); }
 
-.l { *zoom: 1; }
-.l:after { content: " "; display: table; clear: both; }
-.l .l-col1 { float: left; width: 20%; }
-.l .l-col2 { float: right; width: 70%; }
+body { min-width: 320px; font-size: 15px; font-family: "roboto-regular", Arial, sans-serif; color: #565656; line-height: 1.2; background: white; -webkit-font-smoothing: antialiased; -moz-font-smoothing: antialiased; -ms-font-smoothing: antialiased; -o-font-smoothing: antialiased; }
+
+a { text-decoration: none; color: #47a8c8; }
+
+.l-center { margin: 0 auto; padding: 0 50px; max-width: 1200px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+.to-center { text-align: center; }
+
+.wrap { *zoom: 1; clear: both; }
+.wrap:after { content: " "; display: table; clear: both; }
+
+.wrapper { overflow: hidden; }
+
+.out { position: relative; }
+
+.header { position: relative; box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2); }
+.header .l-center { *zoom: 1; padding: 0; }
+.header .l-center:after { content: " "; display: table; clear: both; }
+.header__logo { position: relative; float: left; padding-left: 107px; height: 90px; line-height: 90px; position: relative; color: #565656; font-family: "roboto-bold", Arial, sans-serif; font-size: 30px; }
+.header__logo span { color: #47a8c8; font-family: "roboto-thin", Arial, sans-serif; }
+.header__logo img { position: absolute; left: 0; top: 15px; }
