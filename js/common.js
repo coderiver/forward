@@ -4,5 +4,17 @@ head.ready(function() {
 	// 	$(".js-popup").hide();
 	// });
 
-	console.log($('body').html());
+	$(".js-select select").on("change",function(){
+		var	val = $(this).val();
+		$(this).parent().find(".js-select-text").text(val);
+	});
+
+
+	function fotoramaInit() {
+	  	var $fotoramaDiv = $('.js-fotorama').on('fotorama:ready', function () {
+		    $('.js-fotorama').addClass("is-ready");
+		}).fotorama();
+	}
+	fotoramaInit();
+
 });

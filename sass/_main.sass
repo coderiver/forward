@@ -1,2 +1,94 @@
-// Normally mainpage styles
- 
+.slider
+	position: relative
+	height: 619px
+	overflow: hidden
+	.fotorama
+		overflow: hidden
+		&__nav-wrap
+			bottom: 32px
+			text-align: left
+		&__nav
+			&__shaft
+				max-width: 1100px
+				+box
+				padding-left: 208px
+				margin: 0 auto
+				display: block 
+	&__item
+		position: relative
+		.l-center
+			position: relative
+			height: 619px
+	&__img
+		position: absolute
+		left: 50%
+		top: 0
+		bottom: 0
+		margin-left: -1200px
+		width: 2400px
+		text-align: center
+	&__info
+		position: absolute
+		bottom: 320px
+		left: 100px
+		.list
+			margin-left: 28px
+	&__title
+		font-size: 44px
+		+ft
+	&__subtitle
+		font-size: 30px
+		+fb 
+.login-wrap
+	position: absolute
+	top: 0
+	left: 50%
+	margin-left: -600px
+	bottom: 0
+.login
+	position: absolute
+	left: 66px
+	bottom: 105px
+	width: 452px
+	+box
+	background: #fff
+	border-radius: 10px 
+	.field
+		margin-bottom: 14px
+	.input-wrap
+		margin-right: 10px
+		width: 150px
+	&__in
+		padding: 15px 
+	&__footer
+		border-top: 1px solid #e5e5e5 
+		padding: 18px 33px 
+		color: #6a6a6a
+		font-size: 13px
+		+fb 
+		a
+			+tr
+			&:hover
+				color: $blue_d 
+.soc-enter
+	color: #6a6a6a
+	a,span
+		display: inline-block
+		vertical-align: middle
+	span
+		margin-right: 7px
+		font-size: 13px
+		+fb
+	a
+		width: 36px
+		height: 36px
+		text-align: center
+		line-height: 36px
+		font-size: 28px
+		color: $blue 
+		+tr
+		&:hover
+			color: $blue_d 
+		i
+			display: inline-block
+			vertical-align: middle
