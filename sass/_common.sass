@@ -127,6 +127,29 @@ a
 		margin: 27px 18px 0 28px
 .select
 	position: relative
+	&_input
+		&.is-active
+			.input
+				position: relative
+				z-index: 2
+				box-shadow: inset 0 2px 5px rgba(0,0,0,.2), 0 0 0 3px $blue
+		.input
+			padding-right: 30px
+			line-height: 46px
+			position: relative
+			cursor: pointer
+			+text-overflow
+			&:after
+				content: "\f0d7"
+				position: absolute
+				top: 16px
+				right: 16px
+				+fa
+				font-size: 15px
+				color: #aaa 
+		select
+			width: 100%
+		
 	select
 		position: absolute
 		top: 0
@@ -168,13 +191,68 @@ a
 			+ts
 			+fa
 
+.title
+	margin-bottom: 2px
+	font-size: 28px
+	letter-spacing: .5px 
+	+ft
+	strong
+		font-weight: normal
+		+fb
+	span
+		color: $blue 
+.subtitle
+	margin-bottom: 40px
+	font-size: 28px
+	+fm 
+
+.field-group
+	margin-bottom: 23px
+	border-bottom: 1px solid #e5e5e5
+	padding-bottom: 19px 
+	&:last-child
+		border: 0
+	&__info
+		padding-bottom: 15px
+		font-size: 13px
+		strong
+			display: block
+			font-weight: normal
+			+fb
+	.checkbox-wrap
+		margin-bottom: 30px
 .field
 	font-size: 0
+	margin-bottom: 10px
+	&__place,
+	&__zip
+		display: inline-block
+		vertical-align: middle
+	&__place
+		width: 78%
+	&__zip
+		width: 20%
+		margin-left: 2%
+	&__title   
+		margin-bottom: 13px
+		font-size: 13px
+		+fb
+		color: #3e3e3e
+		span
+			+fr
+			color: #767676 
 .input-wrap
 	position: relative
 	&_inline
 		display: inline-block
 		vertical-align: middle
+	&_half
+		display: inline-block
+		vertical-align: middle
+		width: 49%
+		margin-left: 2% 
+		&:first-child
+			margin-left: 0 
 	.fa-question-circle
 		position: absolute
 		font-size: 18px
@@ -221,6 +299,76 @@ a
 		+box-shadow(inset 0 1px 0 rgba(255,255,255,.7))
 	.fa
 		margin-right: 4px
+	&.is-liquid
+		display: block
+		width: 100%
+		padding: 15px 5px
+		text-align: center 
+		
+.checkbox-wrap
+	margin-bottom: 10px
+.checkbox
+	display: inline-block
+	position: relative
+	cursor: pointer
+	white-space: nowrap
+	font-size: 0
+	+box
+	input
+		display: inline-block
+		vertical-align: middle
+		width: 18px
+		height: 18px
+		opacity: 0
+		visibility: hidden
+		&:checked
+			+ span
+				&:after
+					visibility: visible
+					opacity: 1
+					margin-top: -8px
+	span	 
+		display: inline-block
+		vertical-align: middle
+		position: relative
+		margin: 0
+		padding-left: 13px
+		font-size: 13px
+		+fb
+		color: #3e3e3e
+		white-space: normal
+		+unselectable
+		&:before
+			content: ""
+			position: absolute
+			left: -16px
+			top: 50%
+			margin-top: -9px
+			border: 1px solid #d3d3d3
+			width: 16px
+			height: 16px
+			+box
+			background: #f9f9f9 
+			border-radius: 4px 
+			+box-shadow(inset 0 0 5px rgba(0,0,0,.13))
+		&:after
+			content: "\f00c"
+			position: absolute
+			left: -15px
+			top: 50%
+			margin-top: -12px
+			font-size: 14px
+			+fa  
+			opacity: 0
+			visibility: hidden
+			color: $blue 
+			+tr(all .1s linear)
+	a
+		+tr
+		&:hover
+			color: $blue_d
+			 	
+
 .footer
 	position: relative
 	border-top: 1px solid #e5e5e5 
