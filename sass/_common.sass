@@ -111,15 +111,16 @@ a
 			height: 90px
 			line-height: 90px  
 			position: relative
+			letter-spacing: .5px 
 			color: $text 
 			+fb
 			font-size: 30px
 			&:hover
 				color: $text
-				img 
-					//-webkit-transform: translateY(-150px)
-					top: -300px
-					-webkit-transform: rotateZ(-140deg)
+				// img 
+				// 	//-webkit-transform: translateY(-150px)
+				// 	//top: -300px
+				// 	+transform(rotateZ(-90deg) translateY(-300px))
 		span
 			color: $blue
 			+ft
@@ -329,6 +330,9 @@ a
 	&_inline
 		display: inline-block
 		vertical-align: middle
+		+r(w800)
+			display: block
+			width: 100%
 	&_half
 		display: inline-block
 		vertical-align: middle

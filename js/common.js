@@ -15,11 +15,19 @@ head.ready(function() {
 		event.stopPropagation();
 	});
 
-	function fotoramaInit() {
-	  	var $fotoramaDiv = $('.js-fotorama').on('fotorama:ready', function () {
-		    $('.js-fotorama').addClass("is-ready");
-		}).fotorama();
+	if ($(window).width() >= 800) {
+		fotoramaInit();
 	}
-	fotoramaInit();
+	function fotoramaInit() {
+	  	var $fotoramaDiv = $('.js-fotorama').fotorama();
+		var fotorama = $fotoramaDiv.data('fotorama');
+	}
+	
+	$(window).resize(function(){
+		if ($(window).width() >= 800) {
+			fotoramaInit();
+		}
+	});
+
 
 });

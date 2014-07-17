@@ -2,9 +2,18 @@
 	position: relative
 	height: 619px
 	overflow: hidden
+	+r(w800)
+		cursor: default
+		padding: 5px 20px 
+		background: #fff 
+		height: auto
 	.fotorama
 		overflow: hidden
-		height: 619px
+		height: 619px 
+		+r(w800)
+			height: auto
+			.fotorama__stage
+				height: auto !important
 		&__nav-wrap
 			bottom: 32px
 			text-align: left
@@ -17,9 +26,15 @@
 				display: block 
 	&__item
 		position: relative
+		+r(w800)
+			display: none
+			&:first-child
+				display: block
 		.l-center
 			position: relative
 			height: 619px
+			+r(w800)
+				height: auto
 	&__img
 		position: absolute
 		left: 50%
@@ -28,48 +43,77 @@
 		margin-left: -1200px
 		width: 2400px
 		text-align: center
+		+r(w800)
+			display: none
 	&__info
 		position: absolute
-		bottom: 354px 
+		bottom: 300px 
 		left: 147px
 		letter-spacing: 1px 
 		.list
 			margin-left: 30px
+		+r(w800)
+			position: static
+			padding-top: 16px
+			.list
+				margin-left: 20px
 	&__title
 		margin-bottom: 6px
 		font-size: 44px
 		+ft
+		+r(w800)
+			font-size: 27px
 	&__subtitle
 		margin-bottom: 29px
 		font-size: 30px
 		+fb 
+		+r(w800)
+			margin-bottom: 0
+			font-size: 20px
 	&__login
-		height: 1px
+		min-height: 1px
 		position: relative
 .login
 	position: absolute
-	left: 66px
-	bottom: 105px
+	left: 69px
+	bottom: 107px
 	width: 452px
 	+box
 	background: #fff
 	border-radius: 10px 
+	+r(w800)
+		position: static
+		width: 100%
 	.field
 		margin-bottom: 14px
 	.input-wrap
 		margin-right: 10px
 		width: 150px
+		+r(w800)
+			width: 100%
+			margin: 0 0 10px 
+	.btn
+		+r(w800)
+			width: 100%
+			margin: 0 0 10px 
+			text-align: center
 	&__in
 		padding: 15px 15px 7px
+		+r(w800)
+			padding: 15px 0 15px
 	&__footer
 		border-top: 1px solid #e5e5e5 
 		padding: 15px 33px 22px
 		color: #6a6a6a
 		font-size: 13px
 		+fb 
+		+r(w800)
+			padding-left: 0
 .soc-enter
 	padding-left: 20px
 	color: #6a6a6a
+	+r(w800)
+		padding-left: 0
 	a,span
 		display: inline-block
 		vertical-align: middle
@@ -93,7 +137,10 @@
 	height: 416px
 	color: #3e3e3e
 	+box
-	background: url(../img/paper.png) 50% 0 repeat-x 
+	background: url(../img/paper.png) 50% 0 repeat 
+	+r(w800)
+		height: auto
+		background: url(../img/paper2.jpg) 50% 0 repeat 
 	&__in
 		max-width: 996px
 		margin: 0 auto 
@@ -104,32 +151,73 @@
 		font-size: 40px
 		+ft
 		text-align: center
+		+r(w800)
+			+sr(list)
+			font-size: 20px
+			line-height: 90px
 	&__wrap
-		margin-top: -40px
+		margin-top: 10px
 		padding-left: 26px
 		+justify
+		+r(w800)
+			margin-top: 0
+			padding: 20px 20px 0
+			text-align: left
 	&__item
 		text-align: center
 		display: inline-block
 		vertical-align: bottom
 		font-size: 19px
 		text-shadow: 0 1px 0 rgba(255,255,255,.45)
-		div
-			margin-bottom: 17px
-			+fb
-			font-size: 30px
-			
+		+r(w800)
+			display: block
+			text-align: left
+			margin-bottom: 40px
 	&__img
+		height: 100px
+		+r(w800)
+			display: inline-block
+			vertical-align: middle
+			margin-right: 11px
+			width: 62px
+			height: auto
+			text-align: center
 		i
 			display: inline-block
+			+r(w800)
+				position: static !important
+	&__main
+		div
+			margin-bottom: 14px
+			+fb
+			font-size: 30px
+		+r(w800)
+			display: inline-block
+			vertical-align: middle
+			font-size: 14px
+			div
+				font-size: 25px
+				margin-bottom: 6px
 	&__sign
 		+s(sign-up)
+		+r(w800)
+			+sr(sign-up)
 	&__cart
+		position: relative
+		left: 19px
+		top: 3px
 		+s(cart)
+		+r(w800)
+			+sr(cart)
 	&__receive
+		position: relative
+		top: -30px
+		left: 4px
 		+s(receive)
+		+r(w800)
+			+sr(receive)
 .about
-	padding: 45px 50px 48px 
+	padding: 45px 50px 44px 
 	+clr
 	background: #fff 
 	+r(w800)
