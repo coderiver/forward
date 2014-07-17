@@ -30,10 +30,10 @@
 	text-shadow: 0 1px 0 #fff
 	 
 $text: #565656
-$blue: #47a8c8
-$blue_d: #1594be 
-$gray: #d7d7d7
-$gray_d: #878787
+$blue: #47a8c8 
+$blue_d: #0087b3 
+$gray: #d7d7d7 
+$gray_d: #878787 
 
 html
 	+scrollbar
@@ -60,13 +60,17 @@ body
 a
 	text-decoration: none
 	color: $blue
-
+	+tr
+	&:hover
+		color: $blue_d 
 .l-center
 	position: relative
 	margin: 0 auto  
 	padding: 0 50px 
 	max-width: 1200px
 	+box
+	+r(w800)
+		padding: 0 20px 
 .to-center
 	text-align: center
 .wrap
@@ -86,20 +90,35 @@ a
 .header
 	position: relative 
 	z-index: 2
+	font-size: 13px
 	box-shadow: 0 1px 6px rgba(0,0,0,.2)
 	.l-center
 		+clr
 		padding: 0
+		+r(w800)
+			padding: 0 20px 20px
 	&__logo
 		position: relative
 		float: left
-		padding-left: 107px
-		height: 90px
-		line-height: 90px  
-		position: relative
-		color: $text 
-		+fb
-		font-size: 30px
+		+r(w800)
+			float: none
+			margin-left: -50px
+			text-align: center
+		a
+			display: inline-block
+			padding-left: 107px
+			height: 90px
+			line-height: 90px  
+			position: relative
+			color: $text 
+			+fb
+			font-size: 30px
+			&:hover
+				color: $text
+				img 
+					//-webkit-transform: translateY(-150px)
+					top: -300px
+					-webkit-transform: rotateZ(-140deg)
 		span
 			color: $blue
 			+ft
@@ -107,24 +126,49 @@ a
 			position: absolute
 			left: 0
 			top: 15px
-	&__nav
+			+tr(all .4s linear)
+	&__link
 		float: right
 		margin-top: 22px
-		a
-			display: inline-block
-			border: 1px solid #d3d3d3
-			padding: 15px 22px 16px
-			font-size: 13px
-			color: #6a6a6a 
-			border-radius: 10px
-			+tr
-			&:hover
-				color: $blue 
-				border-color: $blue
-			
+		+r(w800)
+			float: none
+			display: block
+			.link
+				display: block
+				text-align: center
 	&__lang
 		float: right
 		margin: 27px 18px 0 28px
+		+r(w800)
+			float: none
+			margin: -20px 18px 45px 0
+			text-align: right
+		.select
+			display: inline-block
+	&__user
+		float: right
+		margin-top: 23px
+		border-right: 1px solid #d3d3d3
+		span, a
+			display: inline-block
+			margin-right: 23px
+			height: 42px
+			line-height: 42px
+
+.link
+	display: inline-block
+	border: 1px solid #d3d3d3
+	padding: 15px 22px 16px
+	color: #6a6a6a 
+	border-radius: 10px
+	+tr
+	&:hover
+		color: $blue 
+		border-color: $blue
+	&.is-liquid
+		display: block
+		text-align: center
+		padding: 15px 5px 16px
 .select
 	position: relative
 	&_input
@@ -228,11 +272,18 @@ a
 	&__zip
 		display: inline-block
 		vertical-align: middle
+		+r(w640)
+			display: block
 	&__place
 		width: 78%
+		+r(w640)
+			width: 100%
 	&__zip
 		width: 20%
 		margin-left: 2%
+		+r(w640)
+			width: 100%
+			margin: 0
 	&__title   
 		margin-bottom: 13px
 		font-size: 13px
@@ -253,6 +304,10 @@ a
 		margin-left: 2% 
 		&:first-child
 			margin-left: 0 
+		+r(w640)
+			display: block
+			width: 100%
+			margin: 0 0 10px
 	.fa-question-circle
 		position: absolute
 		font-size: 18px
@@ -292,6 +347,8 @@ a
 	border-radius: 10px 
 	+box-shadow(0 1px 4px rgba(#000,.5), inset 0 1px 0 rgba(255,255,255,.7))
 	+box
+	+tr
+	+font-smoothing
 	+tr(background .2s linear)  
 	&:hover
 		background: $blue_d 
@@ -311,12 +368,12 @@ a
 	display: inline-block
 	position: relative
 	cursor: pointer
-	white-space: nowrap
 	font-size: 0
 	+box
 	input
-		display: inline-block
-		vertical-align: middle
+		position: absolute
+		left: 0
+		top: 0
 		width: 18px
 		height: 18px
 		opacity: 0
@@ -326,24 +383,21 @@ a
 				&:after
 					visibility: visible
 					opacity: 1
-					margin-top: -8px
+					top: 1px
 	span	 
-		display: inline-block
-		vertical-align: middle
+		display: block
 		position: relative
 		margin: 0
-		padding-left: 13px
+		padding-left: 30px
 		font-size: 13px
 		+fb
 		color: #3e3e3e
-		white-space: normal
 		+unselectable
 		&:before
 			content: ""
 			position: absolute
-			left: -16px
-			top: 50%
-			margin-top: -9px
+			left: 0px
+			top: 0
 			border: 1px solid #d3d3d3
 			width: 16px
 			height: 16px
@@ -354,19 +408,14 @@ a
 		&:after
 			content: "\f00c"
 			position: absolute
-			left: -15px
-			top: 50%
-			margin-top: -12px
+			left: 1px
+			top: -5px
 			font-size: 14px
 			+fa  
 			opacity: 0
 			visibility: hidden
 			color: $blue 
 			+tr(all .1s linear)
-	a
-		+tr
-		&:hover
-			color: $blue_d
 			 	
 
 .footer
@@ -374,6 +423,16 @@ a
 	border-top: 1px solid #e5e5e5 
 	padding: 29px 0 25px
 	font-size: 13px
+	+r(w800)
+		padding: 19px 0 
+		.footer__in
+			display: block
+		.footer__nav,
+		.footer__info
+			display: block
+			text-align: center
+		.footer__nav
+			margin-bottom: 20px
 	&__in
 		display: table
 		width: 100%
@@ -385,14 +444,10 @@ a
 		a
 			display: inline-block
 			margin-right: 20px
-			+tr
-			&:hover
-				color: $blue_d 
+			&:last-child
+				margin-right: 0
 	&__info
 		color: #8a8a8a
 		text-align: right
 		a
-			color: #3e3e3e
-			+tr
-			&:hover
-				color: $blue_d  
+			color: #3e3e3e 

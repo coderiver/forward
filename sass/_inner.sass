@@ -1,13 +1,64 @@
 .l-main
 	margin-top: 73px
+	+r(w800)
+		margin-top: 20px
 .l-cols
 	+clr
-.l-col1
-	float: left
-	width: 42%
-.l-col2
-	float: right
-	width: 46.5%
+	padding-left: 50px
+	+r(w1200)
+		padding-left: 0
+	.l-col1
+		float: left
+		width: 42%
+		+r(w800)
+			float: none
+			margin-bottom: 28px
+			width: 100%
+			.title
+				font-size: 27px
+			.subtitle
+				margin-bottom: 17px
+				font-size: 20px
+	.l-col2
+		float: right
+		width: 46.5%
+		+r(w800)
+			float: none
+			width: 100%
+		
+.l-cols-table
+	display: table
+	width: 100%
+	color: #3e3e3e 
+	font-size: 13px
+	.l-col1
+		display: table-cell
+		vertical-align: top
+		width: 261px
+	.l-col2
+		display: table-cell
+		vertical-align: top
+		padding: 0 3% 
+	.l-col3
+		display: table-cell
+		vertical-align: top
+		width: 185px
+	+r(w980)	
+		.l-col1,
+		.l-col2,
+		.l-col3
+			display: block
+			margin: 0 auto 35px
+			width: auto
+			padding: 0
+			max-width: 640px
+.col-title
+	margin-bottom: 30px
+	font-size: 20px
+	+fb
+	color: #3e3e3e 
+	+r(w800)
+		margin-bottom: 25px
 .article
 	font-size: 15px
 	line-height: 1.2
@@ -20,11 +71,6 @@
 	i,em
 		font-style: normal
 		+fi
-	a
-		color: $blue    
-		+tr
-		&:hover
-			color: $blue_d
 	h1,h1,h2,h3,h4,h5,h6
 		font-weight: normal
 		+fb
@@ -105,3 +151,105 @@
 				background: #929292 
 				border-radius: 50% 
 				+ts
+
+.info-box
+	margin-bottom: 35px
+	.col-title
+		margin-bottom: 10px
+.country
+	display: table
+	+box
+	border-top: 1px solid #e5e5e5 
+	border-bottom: 1px solid #e5e5e5 
+	padding: 3px 17px 3px 10px 
+	width: 100%
+	background: #efefef 
+	&__left,
+	&__right
+		display: table-cell
+		width: 50%
+		vertical-align: middle
+	&__right
+		text-align: right
+	&__img,
+	&__name
+		display: inline-block
+		vertical-align: middle
+	&__name
+		font-size: 15px
+		+fb
+	img
+		display: block
+		
+.btn-copy
+	display: inline-block
+	width: 30px
+	height: 30px
+	line-height: 27px
+	text-align: center
+	border-radius: 50% 
+	background: #555
+	+box-shadow(0 1px 0 #fff, inset 0 1px 0 #393939)
+	+tr
+	&:before
+		content: "\f0c5"
+		display: inline-block
+		vertical-align: middle
+		+fa
+		font-size: 15px
+		color: #fff
+		line-height: 1  
+		font-style: normal
+		font-weight: normal
+		line-height: 1
+		-webkit-font-smoothing: antialiased
+	&:hover
+		background: $blue 
+.box
+	margin-bottom: 16px
+	&__info
+		padding: 5px 11px 
+.order
+	border: 1px solid #e5e5e5
+	margin-bottom: -1px
+	.country
+		border: 0
+	&__table
+		display: table
+		width: 100%
+		+r(w640)
+			display: block
+			border-top: 1px solid #e5e5e5
+			&:first-child
+				border: 0
+	&__item
+		display: table-cell
+		vertical-align: top
+		padding: 26px 0 19px 22px
+		border-top: 1px solid #e5e5e5
+		+r(w640)
+			display: block
+			border: 0
+			padding: 15px 10px 
+	strong
+		font-weight: normal
+		+fb 
+.money
+	position: relative
+	display: inline-block
+	padding-left: 28px
+	&:before
+		content: ""
+		position: absolute
+		left: 0
+		top: 2px
+		+s(money) 
+
+.details
+	margin-bottom: 45px
+	line-height: 1.3
+	p
+		margin-bottom: 14px
+	strong
+		font-weight: normal
+		+fb

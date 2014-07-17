@@ -18,8 +18,9 @@
 // just write +r(w1280)
 $min1920: 1920px
 $w1280: 1280px
-$w1270: 1270px
+$w1200: 1200px
 $w1024: 1024px
+$w980: 980px
 $w900: 900px
 $w860: 860px
 $w800: 800px    
@@ -34,11 +35,14 @@ $w320: 320px
 	@if $media == w1280
 		@media only screen and (max-width: $w1280)
 			@content
-	@if $media == w1270
-		@media only screen and (max-width: $w1270)
+	@if $media == w1200
+		@media only screen and (max-width: $w1200)
 			@content
 	@if $media == w1024
 		@media only screen and (max-width: $w1024)
+			@content
+	@if $media == w980
+		@media only screen and (max-width: $w980)
 			@content
 	@if $media == w900
 		@media only screen and (max-width: $w900)
