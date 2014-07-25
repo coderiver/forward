@@ -36,16 +36,16 @@ $gray: #d7d7d7
 $gray_d: #878787 
 
 html
-	+scrollbar
-		width: 6px
-		height: 6px
-		+border-radius(4px)
-		background: #d1d1d1
-	+scrollbar-thumb
-		background: $blue_d
-		+border-radius(4px)
-	+scrollbar-track-piece     
-		+border-radius(4px) 
+	// +scrollbar
+	// 	width: 6px
+	// 	height: 6px
+	// 	+border-radius(4px)
+	// 	background: #d1d1d1
+	// +scrollbar-thumb
+	// 	background: $blue_d
+	// 	+border-radius(4px)
+	// +scrollbar-track-piece     
+	// 	+border-radius(4px) 
  
 	+selection
 		background: rgba($blue_d,.3) 
@@ -231,7 +231,7 @@ a
 		position: absolute
 		top: 0
 		height: 100%
-		right: 0
+		width: 100%
 		margin: 0
 		opacity: 0
 		cursor: pointer
@@ -254,6 +254,7 @@ a
 	margin: 18px 0
 	line-height: 1.2
 	font-size: 16px
+	+font-smoothing
 	li
 		position: relative
 		margin-bottom: 7px
@@ -346,6 +347,7 @@ a
 			margin: 0 0 10px
 	.fa-question-circle
 		position: absolute
+		z-index: 3
 		font-size: 18px
 		color: #c2c2c2
 		top: 16px
