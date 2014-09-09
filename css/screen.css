@@ -158,6 +158,10 @@ a:hover { color: #0087b3; }
 .footer__info { color: #8a8a8a; text-align: right; }
 .footer__info a { color: #3e3e3e; }
 
+.touch .country__right { width: 100%; }
+.touch .country__right { display: none; }
+.touch .btn-copy { display: none; }
+
 .slider { position: relative; height: 619px; overflow: hidden; }
 @media only screen and (max-width: 800px) { .slider { cursor: default; padding: 5px 20px; background: white; height: auto; } }
 .slider .fotorama { overflow: hidden; height: 619px; }
